@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SUM Numbers</title>
+</head>
+<body>
+<p>Sum a list of numbers</p>
+
+<input type="text" name="valores" id="valores" onchange="teste()">
+<input type="button" name="Clear" value="Clear" onclick="valores.value=''">
+<p></p>
+<div id="result">
+	
+</div>
+
+<script type="text/javascript">
+	var i = 0;
+
+	function teste(){
+		var numbers = valores.value;
+		var lista = numbers.replace(/ /g, ',');
+		var array = lista.split(',');
+		var sum = array.reduce(add, 0);
+
+		function add(a, b) {
+    		return parseInt(a) + parseInt(b);
+		}
+		document.getElementById("result").innerHTML = sum;
+	}
+</script>
+</body>
+</html>
